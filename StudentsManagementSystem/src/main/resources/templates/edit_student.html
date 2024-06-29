@@ -27,23 +27,26 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <div class="text-center" style="font-size: 30px;">Create New Student</div>
+            <div class="text-center" style="font-size: 30px;">Update Student</div>
             <div class="card-body"></div>
-            <form th:action="@{/students}" th:object="${student}" method="post">
+            <form th:action="@{/students/edit/{id}(id=${student.id})}" th:object="${student}" method="post">
                 <div class="form-group">
                     <label>Student First Name</label>
-                    <input type="text" name="firstName" class="form-control" placeholder="Enter Student FirstName">
+                    <input type="text" name="firstName" class="form-control" placeholder="Enter Student FirstName"
+                           th:field="*{firstName}">
                 </div>
                 <div class="form-group">
                     <label>Student Last Name</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Enter Student lastName">
+                    <input type="text" name="lastName" class="form-control" placeholder="Enter Student lastName"
+                           th:field="*{lastName}">
                 </div>
                 <div class="form-group">
                     <label>Student Email</label>
-                    <input type="text" name="email" class="form-control" placeholder="Enter Student email">
+                    <input type="text" name="email" class="form-control" placeholder="Enter Student email"
+                           th:field="*{email}">
                 </div>
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form>
         </div>
