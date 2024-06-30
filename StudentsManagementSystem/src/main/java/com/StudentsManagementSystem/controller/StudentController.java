@@ -18,6 +18,11 @@ public class StudentController {
     public String home(){
         return "home";
     }
+
+    @GetMapping("/home/start")
+    public String start(){
+        return "redirect:/students";
+    }
     @GetMapping("/students")
     public String getAllStudents(Model model){
         model.addAttribute("students",studentService.getAllStudents());
